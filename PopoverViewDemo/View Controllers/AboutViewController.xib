@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController">
+            <connections>
+                <outlet property="githubLabel" destination="AcO-cP-v0g" id="FUj-PT-7F1"/>
+                <outlet property="twitterLabel" destination="wWm-Ds-5rJ" id="aP8-uh-SRb"/>
+                <outlet property="view" destination="1" id="3"/>
+                <outlet property="websiteLabel" destination="2wJ-TA-fAM" id="j6S-C8-BbK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="427"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="208" translatesAutoresizingMaskIntoConstraints="NO" id="rj9-9G-153" userLabel="Label - BDBPopupViewController  © 2013 Bradley David Bergeron">
+                    <rect key="frame" x="56" y="60" width="208" height="42"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <attributedString key="attributedText">
+                        <fragment content="BDBPopupViewController">
+                            <attributes>
+                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5"/>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                            <attributes>
+                                <color key="NSColor" white="0.38406706204379559" alpha="1" colorSpace="calibratedWhite"/>
+                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="5"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="© 2013 Bradley David Bergeron">
+                            <attributes>
+                                <color key="NSColor" white="0.26074931569343068" alpha="1" colorSpace="calibratedWhite"/>
+                                <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="127" translatesAutoresizingMaskIntoConstraints="NO" id="2wJ-TA-fAM">
+                    <rect key="frame" x="97" y="142" width="127" height="36"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <string key="text">website
+bradbergeron.com</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="105" translatesAutoresizingMaskIntoConstraints="NO" id="wWm-Ds-5rJ">
+                    <rect key="frame" x="108" y="193" width="105" height="36"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <string key="text">twitter
+@bradbergeron</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="162" translatesAutoresizingMaskIntoConstraints="NO" id="AcO-cP-v0g">
+                    <rect key="frame" x="79" y="244" width="162" height="36"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <string key="text">github
+github.com/bdbergeron</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUw-Wb-5Kn">
+                    <rect key="frame" x="135" y="371" width="51" height="36"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Close"/>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.38406706200000001" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="close:" destination="-1" eventType="touchUpInside" id="Nzr-ZX-7pf"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.69275085300000006" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="rj9-9G-153" firstAttribute="top" secondItem="1" secondAttribute="top" constant="60" id="CGS-Mk-5Iq"/>
+                <constraint firstAttribute="centerX" secondItem="LUw-Wb-5Kn" secondAttribute="centerX" id="LEy-ST-a55"/>
+                <constraint firstAttribute="bottom" secondItem="LUw-Wb-5Kn" secondAttribute="bottom" constant="20" id="Mew-gO-Uzk"/>
+                <constraint firstItem="wWm-Ds-5rJ" firstAttribute="top" secondItem="2wJ-TA-fAM" secondAttribute="bottom" constant="15" id="NPg-O3-Jf0"/>
+                <constraint firstAttribute="centerX" secondItem="2wJ-TA-fAM" secondAttribute="centerX" id="P6f-tO-aEx"/>
+                <constraint firstAttribute="centerX" secondItem="wWm-Ds-5rJ" secondAttribute="centerX" id="SzA-sf-nmn"/>
+                <constraint firstAttribute="centerX" secondItem="rj9-9G-153" secondAttribute="centerX" id="eYx-bH-lWs"/>
+                <constraint firstItem="AcO-cP-v0g" firstAttribute="top" secondItem="wWm-Ds-5rJ" secondAttribute="bottom" constant="15" id="g4c-Pc-9Ze"/>
+                <constraint firstItem="2wJ-TA-fAM" firstAttribute="top" secondItem="rj9-9G-153" secondAttribute="bottom" constant="40" id="jMq-UY-69j"/>
+                <constraint firstAttribute="centerX" secondItem="AcO-cP-v0g" secondAttribute="centerX" id="s3U-bb-1of"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>
