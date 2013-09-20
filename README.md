@@ -39,7 +39,7 @@ The popup view controller slides in from the top of the screen with a bounce eff
 
 ## Screenshots
 ![iPhone Screenshot](iPhone.png)
-![iPad Screenshot](iPad.png)
+![iPad Screenshot](iPad.png 320x)
 
 ## Credits
 
