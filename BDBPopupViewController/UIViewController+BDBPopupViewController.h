@@ -24,12 +24,22 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CAKeyframeAnimation+AHEasing.h"
+
 
 typedef enum
 {
-    BDBPopupAnimationDefault,
-    BDBPopupAnimationGrowFromCenter
-} BDBPopupViewAnimationStyle;
+    BDBPopupViewShowAnimationDefault,
+    BDBPopupViewShowAnimationZoomIn,
+    BDBPopupViewShowAnimationDropDown
+} BDBPopupViewShowAnimationStyle;
+
+typedef enum
+{
+    BDBPopupViewHideAnimationDefault,
+    BDBPopupViewHideAnimationZoomOut,
+    BDBPopupViewHideAnimationTakeoff
+} BDBPopupViewHideAnimationStyle;
 
 
 #pragma mark -
@@ -37,7 +47,7 @@ typedef enum
 
 @property (nonatomic, readonly) UIViewController    *popupViewController;
 
-- (void)presentPopupViewController:(UIViewController *)viewController withAnimation:(BDBPopupViewAnimationStyle)animation completion:(void (^)(void))completion;
-- (void)dismissPopupViewControllerWithAnimation:(BDBPopupViewAnimationStyle)animation completion:(void (^)(void))completion;
+- (void)presentPopupViewController:(UIViewController *)viewController withAnimation:(BDBPopupViewShowAnimationStyle)animation completion:(void (^)(void))completion;
+- (void)dismissPopupViewControllerWithAnimation:(BDBPopupViewHideAnimationStyle)animation completion:(void (^)(void))completion;
 
 @end

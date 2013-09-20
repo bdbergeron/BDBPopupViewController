@@ -14,6 +14,7 @@
 
 #pragma mark Colors
 + (UIColor *)blueColor;
++ (UIColor *)pinkColor;
 
 #pragma mark Navigation Bar
 + (UIImage *)navigationBarImageForHeight:(CGFloat)height;

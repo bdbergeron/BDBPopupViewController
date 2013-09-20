@@ -68,7 +68,7 @@
 
 - (IBAction)close:(UIButton *)sender
 {
-    [self.parentViewController dismissPopupViewControllerWithAnimation:BDBPopupAnimationGrowFromCenter completion:nil];
+    [self.parentViewController dismissPopupViewControllerWithAnimation:BDBPopupViewHideAnimationZoomOut completion:nil];
 }
 
 @end

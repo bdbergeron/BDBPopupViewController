@@ -24,6 +24,8 @@
 		E8568D6317EA898B003528F0 /* UIImage+BBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E8568D6217EA898B003528F0 /* UIImage+BBlock.m */; };
 		E8568D6617EA899A003528F0 /* UIViewController+BDBPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8568D6517EA899A003528F0 /* UIViewController+BDBPopupViewController.m */; };
 		E8568D6917EA8C4B003528F0 /* SSSocialRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8568D6717EA8C4B003528F0 /* SSSocialRegular.otf */; };
+		E8CE15B117EC0D1D001B5A06 /* CAKeyframeAnimation+AHEasing.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CE15AE17EC0D1D001B5A06 /* CAKeyframeAnimation+AHEasing.m */; };
+		E8CE15B217EC0D1D001B5A06 /* easing.c in Sources */ = {isa = PBXBuildFile; fileRef = E8CE15AF17EC0D1D001B5A06 /* easing.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,10 @@
 		E8568D6417EA899A003528F0 /* UIViewController+BDBPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+BDBPopupViewController.h"; path = "BDBPopupViewController/UIViewController+BDBPopupViewController.h"; sourceTree = SOURCE_ROOT; };
 		E8568D6517EA899A003528F0 /* UIViewController+BDBPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+BDBPopupViewController.m"; path = "BDBPopupViewController/UIViewController+BDBPopupViewController.m"; sourceTree = SOURCE_ROOT; };
 		E8568D6717EA8C4B003528F0 /* SSSocialRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SSSocialRegular.otf; sourceTree = "<group>"; };
+		E8CE15AD17EC0D1D001B5A06 /* CAKeyframeAnimation+AHEasing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAKeyframeAnimation+AHEasing.h"; sourceTree = "<group>"; };
+		E8CE15AE17EC0D1D001B5A06 /* CAKeyframeAnimation+AHEasing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAKeyframeAnimation+AHEasing.m"; sourceTree = "<group>"; };
+		E8CE15AF17EC0D1D001B5A06 /* easing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = easing.c; sourceTree = "<group>"; };
+		E8CE15B017EC0D1D001B5A06 /* easing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easing.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,7 @@
 		E829389C17EA804F003902B9 = {
 			isa = PBXGroup;
 			children = (
+				E8CE15AC17EC0D1D001B5A06 /* AHEasing */,
 				E82938D717EA80BA003902B9 /* Resources */,
 				E8568D6017EA898B003528F0 /* Categories */,
 				E82938AE17EA804F003902B9 /* PopoverViewDemo */,
@@ -167,6 +174,18 @@
 			path = PopoverViewDemo/Categories;
 			sourceTree = "<group>";
 		};
+		E8CE15AC17EC0D1D001B5A06 /* AHEasing */ = {
+			isa = PBXGroup;
+			children = (
+				E8CE15AD17EC0D1D001B5A06 /* CAKeyframeAnimation+AHEasing.h */,
+				E8CE15AE17EC0D1D001B5A06 /* CAKeyframeAnimation+AHEasing.m */,
+				E8CE15AF17EC0D1D001B5A06 /* easing.c */,
+				E8CE15B017EC0D1D001B5A06 /* easing.h */,
+			);
+			name = AHEasing;
+			path = AHEasing/AHEasing;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -239,7 +258,9 @@
 				E82938B917EA804F003902B9 /* AppDelegate.m in Sources */,
 				E82938E017EA813E003902B9 /* MainViewController.m in Sources */,
 				E8568D5F17EA88C4003528F0 /* BDBAppearance.m in Sources */,
+				E8CE15B117EC0D1D001B5A06 /* CAKeyframeAnimation+AHEasing.m in Sources */,
 				E8568D6617EA899A003528F0 /* UIViewController+BDBPopupViewController.m in Sources */,
+				E8CE15B217EC0D1D001B5A06 /* easing.c in Sources */,
 				E82938E517EA82F3003902B9 /* AboutViewController.m in Sources */,
 				E82938B517EA804F003902B9 /* main.m in Sources */,
 			);

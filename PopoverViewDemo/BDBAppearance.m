@@ -20,6 +20,11 @@
     return [UIColor colorWithRed:0.000 green:0.694 blue:1.000 alpha:1.000];
 }
 
++ (UIColor *)pinkColor
+{
+    return [UIColor colorWithRed:1.000 green:0.239 blue:0.333 alpha:1.000];
+}
+
 #pragma mark Navigation Bar
 + (UIImage *)navigationBarImageForHeight:(CGFloat)height
 {
