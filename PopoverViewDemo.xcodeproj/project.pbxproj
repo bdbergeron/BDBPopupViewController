@@ -23,7 +23,6 @@
 		E8568D5F17EA88C4003528F0 /* BDBAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = E8568D5E17EA88C4003528F0 /* BDBAppearance.m */; };
 		E8568D6317EA898B003528F0 /* UIImage+BBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E8568D6217EA898B003528F0 /* UIImage+BBlock.m */; };
 		E8568D6617EA899A003528F0 /* UIViewController+BDBPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8568D6517EA899A003528F0 /* UIViewController+BDBPopupViewController.m */; };
-		E8568D6917EA8C4B003528F0 /* SSSocialRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E8568D6717EA8C4B003528F0 /* SSSocialRegular.otf */; };
 		E8CE15B117EC0D1D001B5A06 /* CAKeyframeAnimation+AHEasing.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CE15AE17EC0D1D001B5A06 /* CAKeyframeAnimation+AHEasing.m */; };
 		E8CE15B217EC0D1D001B5A06 /* easing.c in Sources */ = {isa = PBXBuildFile; fileRef = E8CE15AF17EC0D1D001B5A06 /* easing.c */; };
 /* End PBXBuildFile section */
@@ -54,7 +53,6 @@
 		E8568D6217EA898B003528F0 /* UIImage+BBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BBlock.m"; sourceTree = "<group>"; };
 		E8568D6417EA899A003528F0 /* UIViewController+BDBPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+BDBPopupViewController.h"; path = "BDBPopupViewController/UIViewController+BDBPopupViewController.h"; sourceTree = SOURCE_ROOT; };
 		E8568D6517EA899A003528F0 /* UIViewController+BDBPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+BDBPopupViewController.m"; path = "BDBPopupViewController/UIViewController+BDBPopupViewController.m"; sourceTree = SOURCE_ROOT; };
-		E8568D6717EA8C4B003528F0 /* SSSocialRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SSSocialRegular.otf; sourceTree = "<group>"; };
 		E8CE15AD17EC0D1D001B5A06 /* CAKeyframeAnimation+AHEasing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAKeyframeAnimation+AHEasing.h"; sourceTree = "<group>"; };
 		E8CE15AE17EC0D1D001B5A06 /* CAKeyframeAnimation+AHEasing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAKeyframeAnimation+AHEasing.m"; sourceTree = "<group>"; };
 		E8CE15AF17EC0D1D001B5A06 /* easing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = easing.c; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 			children = (
 				E80FE4A617EAA003006DB34A /* SSStandard.ttf */,
 				E82938E817EA8396003902B9 /* SSSocialCircle.otf */,
-				E8568D6717EA8C4B003528F0 /* SSSocialRegular.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -243,7 +240,6 @@
 				E82938E617EA82F3003902B9 /* AboutViewController.xib in Resources */,
 				E82938D917EA80BA003902B9 /* Images.xcassets in Resources */,
 				E82938E917EA8396003902B9 /* SSSocialCircle.otf in Resources */,
-				E8568D6917EA8C4B003528F0 /* SSSocialRegular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
