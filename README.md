@@ -38,8 +38,8 @@ Likely to be the most used animation, the zoom in/out animation does exactly wha
 The popup view controller slides in from the top of the screen with a bounce effect and slides back up when dismissed.
 
 ## Screenshots
-![iPhone Screenshot](iPhone.png)
-![iPad Screenshot](iPad.png)
+![iPhone Screenshot](https://dl.dropboxusercontent.com/u/6225/GitHub/BDBPopupViewController/iPad.png)
+![iPad Screenshot](https://dl.dropboxusercontent.com/u/6225/GitHub/BDBPopupViewController/iPhone.png)
 
 ## Credits
 
