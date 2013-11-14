@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E80FE4A717EAA003006DB34A /* SSStandard.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E80FE4A617EAA003006DB34A /* SSStandard.ttf */; };
 		E82938A917EA804F003902B9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E82938A817EA804F003902B9 /* Foundation.framework */; };
 		E82938AB17EA804F003902B9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E82938AA17EA804F003902B9 /* CoreGraphics.framework */; };
 		E82938AD17EA804F003902B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E82938AC17EA804F003902B9 /* UIKit.framework */; };
@@ -18,7 +17,6 @@
 		E82938E117EA813E003902B9 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E82938DF17EA813E003902B9 /* MainViewController.xib */; };
 		E82938E517EA82F3003902B9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E82938E317EA82F3003902B9 /* AboutViewController.m */; };
 		E82938E617EA82F3003902B9 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E82938E417EA82F3003902B9 /* AboutViewController.xib */; };
-		E82938E917EA8396003902B9 /* SSSocialCircle.otf in Resources */ = {isa = PBXBuildFile; fileRef = E82938E817EA8396003902B9 /* SSSocialCircle.otf */; };
 		E8568D5F17EA88C4003528F0 /* BDBAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = E8568D5E17EA88C4003528F0 /* BDBAppearance.m */; };
 		E8C2482F18347F8B00B44BAC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8C2482E18347F8B00B44BAC /* Images.xcassets */; };
 		E8C248321834842E00B44BAC /* UIImage+BBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C248311834842E00B44BAC /* UIImage+BBlock.m */; };
@@ -28,7 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E80FE4A617EAA003006DB34A /* SSStandard.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SSStandard.ttf; sourceTree = "<group>"; };
 		E82938A517EA804F003902B9 /* PopoverViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopoverViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E82938A817EA804F003902B9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E82938AA17EA804F003902B9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,7 +42,6 @@
 		E82938E217EA82F3003902B9 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		E82938E317EA82F3003902B9 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		E82938E417EA82F3003902B9 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
-		E82938E817EA8396003902B9 /* SSSocialCircle.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SSSocialCircle.otf; sourceTree = "<group>"; };
 		E8568D5D17EA88C4003528F0 /* BDBAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBAppearance.h; sourceTree = "<group>"; };
 		E8568D5E17EA88C4003528F0 /* BDBAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBAppearance.m; sourceTree = "<group>"; };
 		E8C2482E18347F8B00B44BAC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -132,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				E8C2482E18347F8B00B44BAC /* Images.xcassets */,
-				E82938E717EA8396003902B9 /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -148,15 +143,6 @@
 				E82938E417EA82F3003902B9 /* AboutViewController.xib */,
 			);
 			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		E82938E717EA8396003902B9 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				E80FE4A617EAA003006DB34A /* SSStandard.ttf */,
-				E82938E817EA8396003902B9 /* SSSocialCircle.otf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		E8568D6017EA898B003528F0 /* Categories */ = {
@@ -242,10 +228,8 @@
 			files = (
 				E82938B317EA804F003902B9 /* InfoPlist.strings in Resources */,
 				E82938E117EA813E003902B9 /* MainViewController.xib in Resources */,
-				E80FE4A717EAA003006DB34A /* SSStandard.ttf in Resources */,
 				E8C2482F18347F8B00B44BAC /* Images.xcassets in Resources */,
 				E82938E617EA82F3003902B9 /* AboutViewController.xib in Resources */,
-				E82938E917EA8396003902B9 /* SSSocialCircle.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
