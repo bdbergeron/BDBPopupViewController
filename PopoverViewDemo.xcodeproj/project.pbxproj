@@ -14,15 +14,15 @@
 		E82938B317EA804F003902B9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E82938B117EA804F003902B9 /* InfoPlist.strings */; };
 		E82938B517EA804F003902B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E82938B417EA804F003902B9 /* main.m */; };
 		E82938B917EA804F003902B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E82938B817EA804F003902B9 /* AppDelegate.m */; };
-		E82938D917EA80BA003902B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E82938D817EA80BA003902B9 /* Images.xcassets */; };
 		E82938E017EA813E003902B9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E82938DE17EA813E003902B9 /* MainViewController.m */; };
 		E82938E117EA813E003902B9 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E82938DF17EA813E003902B9 /* MainViewController.xib */; };
 		E82938E517EA82F3003902B9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E82938E317EA82F3003902B9 /* AboutViewController.m */; };
 		E82938E617EA82F3003902B9 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E82938E417EA82F3003902B9 /* AboutViewController.xib */; };
 		E82938E917EA8396003902B9 /* SSSocialCircle.otf in Resources */ = {isa = PBXBuildFile; fileRef = E82938E817EA8396003902B9 /* SSSocialCircle.otf */; };
 		E8568D5F17EA88C4003528F0 /* BDBAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = E8568D5E17EA88C4003528F0 /* BDBAppearance.m */; };
-		E8568D6317EA898B003528F0 /* UIImage+BBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E8568D6217EA898B003528F0 /* UIImage+BBlock.m */; };
-		E8568D6617EA899A003528F0 /* UIViewController+BDBPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8568D6517EA899A003528F0 /* UIViewController+BDBPopupViewController.m */; };
+		E8C2482F18347F8B00B44BAC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8C2482E18347F8B00B44BAC /* Images.xcassets */; };
+		E8C248321834842E00B44BAC /* UIImage+BBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C248311834842E00B44BAC /* UIImage+BBlock.m */; };
+		E8C248361834843E00B44BAC /* UIViewController+BDBPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C248351834843E00B44BAC /* UIViewController+BDBPopupViewController.m */; };
 		E8CE15B117EC0D1D001B5A06 /* CAKeyframeAnimation+AHEasing.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CE15AE17EC0D1D001B5A06 /* CAKeyframeAnimation+AHEasing.m */; };
 		E8CE15B217EC0D1D001B5A06 /* easing.c in Sources */ = {isa = PBXBuildFile; fileRef = E8CE15AF17EC0D1D001B5A06 /* easing.c */; };
 /* End PBXBuildFile section */
@@ -39,7 +39,6 @@
 		E82938B617EA804F003902B9 /* PopoverViewDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PopoverViewDemo-Prefix.pch"; sourceTree = "<group>"; };
 		E82938B717EA804F003902B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E82938B817EA804F003902B9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E82938D817EA80BA003902B9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E82938DD17EA813E003902B9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E82938DE17EA813E003902B9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		E82938DF17EA813E003902B9 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -49,10 +48,11 @@
 		E82938E817EA8396003902B9 /* SSSocialCircle.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SSSocialCircle.otf; sourceTree = "<group>"; };
 		E8568D5D17EA88C4003528F0 /* BDBAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDBAppearance.h; sourceTree = "<group>"; };
 		E8568D5E17EA88C4003528F0 /* BDBAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDBAppearance.m; sourceTree = "<group>"; };
-		E8568D6117EA898B003528F0 /* UIImage+BBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BBlock.h"; sourceTree = "<group>"; };
-		E8568D6217EA898B003528F0 /* UIImage+BBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BBlock.m"; sourceTree = "<group>"; };
-		E8568D6417EA899A003528F0 /* UIViewController+BDBPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+BDBPopupViewController.h"; path = "BDBPopupViewController/UIViewController+BDBPopupViewController.h"; sourceTree = SOURCE_ROOT; };
-		E8568D6517EA899A003528F0 /* UIViewController+BDBPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+BDBPopupViewController.m"; path = "BDBPopupViewController/UIViewController+BDBPopupViewController.m"; sourceTree = SOURCE_ROOT; };
+		E8C2482E18347F8B00B44BAC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E8C248301834842E00B44BAC /* UIImage+BBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BBlock.h"; sourceTree = "<group>"; };
+		E8C248311834842E00B44BAC /* UIImage+BBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BBlock.m"; sourceTree = "<group>"; };
+		E8C248341834843E00B44BAC /* UIViewController+BDBPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BDBPopupViewController.h"; sourceTree = "<group>"; };
+		E8C248351834843E00B44BAC /* UIViewController+BDBPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BDBPopupViewController.m"; sourceTree = "<group>"; };
 		E8CE15AD17EC0D1D001B5A06 /* CAKeyframeAnimation+AHEasing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAKeyframeAnimation+AHEasing.h"; sourceTree = "<group>"; };
 		E8CE15AE17EC0D1D001B5A06 /* CAKeyframeAnimation+AHEasing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAKeyframeAnimation+AHEasing.m"; sourceTree = "<group>"; };
 		E8CE15AF17EC0D1D001B5A06 /* easing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = easing.c; sourceTree = "<group>"; };
@@ -76,9 +76,8 @@
 		E829389C17EA804F003902B9 = {
 			isa = PBXGroup;
 			children = (
+				E8C248331834843E00B44BAC /* BDBPopupViewController */,
 				E8CE15AC17EC0D1D001B5A06 /* AHEasing */,
-				E82938D717EA80BA003902B9 /* Resources */,
-				E8568D6017EA898B003528F0 /* Categories */,
 				E82938AE17EA804F003902B9 /* PopoverViewDemo */,
 				E82938A717EA804F003902B9 /* Frameworks */,
 				E82938A617EA804F003902B9 /* Products */,
@@ -106,6 +105,8 @@
 		E82938AE17EA804F003902B9 /* PopoverViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E82938D717EA80BA003902B9 /* Resources */,
+				E8568D6017EA898B003528F0 /* Categories */,
 				E82938B717EA804F003902B9 /* AppDelegate.h */,
 				E82938B817EA804F003902B9 /* AppDelegate.m */,
 				E8568D5D17EA88C4003528F0 /* BDBAppearance.h */,
@@ -130,11 +131,10 @@
 		E82938D717EA80BA003902B9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E8C2482E18347F8B00B44BAC /* Images.xcassets */,
 				E82938E717EA8396003902B9 /* Fonts */,
-				E82938D817EA80BA003902B9 /* Images.xcassets */,
 			);
-			name = Resources;
-			path = PopoverViewDemo/Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E82938DC17EA8112003902B9 /* View Controllers */ = {
@@ -162,13 +162,19 @@
 		E8568D6017EA898B003528F0 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				E8568D6117EA898B003528F0 /* UIImage+BBlock.h */,
-				E8568D6217EA898B003528F0 /* UIImage+BBlock.m */,
-				E8568D6417EA899A003528F0 /* UIViewController+BDBPopupViewController.h */,
-				E8568D6517EA899A003528F0 /* UIViewController+BDBPopupViewController.m */,
+				E8C248301834842E00B44BAC /* UIImage+BBlock.h */,
+				E8C248311834842E00B44BAC /* UIImage+BBlock.m */,
 			);
-			name = Categories;
-			path = PopoverViewDemo/Categories;
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		E8C248331834843E00B44BAC /* BDBPopupViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E8C248341834843E00B44BAC /* UIViewController+BDBPopupViewController.h */,
+				E8C248351834843E00B44BAC /* UIViewController+BDBPopupViewController.m */,
+			);
+			path = BDBPopupViewController;
 			sourceTree = "<group>";
 		};
 		E8CE15AC17EC0D1D001B5A06 /* AHEasing */ = {
@@ -237,8 +243,8 @@
 				E82938B317EA804F003902B9 /* InfoPlist.strings in Resources */,
 				E82938E117EA813E003902B9 /* MainViewController.xib in Resources */,
 				E80FE4A717EAA003006DB34A /* SSStandard.ttf in Resources */,
+				E8C2482F18347F8B00B44BAC /* Images.xcassets in Resources */,
 				E82938E617EA82F3003902B9 /* AboutViewController.xib in Resources */,
-				E82938D917EA80BA003902B9 /* Images.xcassets in Resources */,
 				E82938E917EA8396003902B9 /* SSSocialCircle.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,13 +256,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8568D6317EA898B003528F0 /* UIImage+BBlock.m in Sources */,
 				E82938B917EA804F003902B9 /* AppDelegate.m in Sources */,
+				E8C248361834843E00B44BAC /* UIViewController+BDBPopupViewController.m in Sources */,
 				E82938E017EA813E003902B9 /* MainViewController.m in Sources */,
 				E8568D5F17EA88C4003528F0 /* BDBAppearance.m in Sources */,
 				E8CE15B117EC0D1D001B5A06 /* CAKeyframeAnimation+AHEasing.m in Sources */,
-				E8568D6617EA899A003528F0 /* UIViewController+BDBPopupViewController.m in Sources */,
 				E8CE15B217EC0D1D001B5A06 /* easing.c in Sources */,
+				E8C248321834842E00B44BAC /* UIImage+BBlock.m in Sources */,
 				E82938E517EA82F3003902B9 /* AboutViewController.m in Sources */,
 				E82938B517EA804F003902B9 /* main.m in Sources */,
 			);

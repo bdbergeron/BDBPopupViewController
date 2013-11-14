@@ -12,9 +12,9 @@
 #pragma mark -
 @interface AboutViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *websiteLabel;
-@property (weak, nonatomic) IBOutlet UILabel *twitterLabel;
-@property (weak, nonatomic) IBOutlet UILabel *githubLabel;
+@property (weak, nonatomic) IBOutlet UIView *website;
+@property (weak, nonatomic) IBOutlet UIView *twitter;
+@property (weak, nonatomic) IBOutlet UIView *github;
 
 - (IBAction)close:(UIButton *)sender;
 
