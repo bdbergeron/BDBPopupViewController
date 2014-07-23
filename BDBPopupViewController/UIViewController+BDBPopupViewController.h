@@ -27,19 +27,18 @@
 #import "CAKeyframeAnimation+AHEasing.h"
 
 
-typedef enum
-{
+typedef NS_ENUM(NSUInteger, BDBPopupViewShowAnimationStyle) {
     BDBPopupViewShowAnimationDefault,
     BDBPopupViewShowAnimationZoomIn,
     BDBPopupViewShowAnimationDropDown
-} BDBPopupViewShowAnimationStyle;
+};
 
-typedef enum
-{
+
+typedef NS_ENUM(NSUInteger, BDBPopupViewHideAnimationStyle) {
     BDBPopupViewHideAnimationDefault,
     BDBPopupViewHideAnimationZoomOut,
     BDBPopupViewHideAnimationTakeoff
-} BDBPopupViewHideAnimationStyle;
+};
 
 
 #pragma mark -
