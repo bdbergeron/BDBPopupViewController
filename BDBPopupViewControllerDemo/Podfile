@@ -1,0 +1,4 @@
+platform :ios, '6.0'
+
+pod 'BBlock/UIKit', '~> 1.2'
+pod 'BDBPopupViewController', :path => '../'

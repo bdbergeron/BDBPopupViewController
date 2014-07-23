@@ -1,0 +1,20 @@
+PODS:
+  - AHEasing (1.2)
+  - BBlock/UIKit (1.2.0)
+  - BDBPopupViewController (1.0.1):
+    - AHEasing (~> 1.1)
+
+DEPENDENCIES:
+  - BBlock/UIKit (~> 1.2)
+  - BDBPopupViewController (from `../`)
+
+EXTERNAL SOURCES:
+  BDBPopupViewController:
+    :path: ../
+
+SPEC CHECKSUMS:
+  AHEasing: ecab36683ef8c3a9a925fb85e892d1335e750f31
+  BBlock: 90f0ae0e3ba94fc88be6b9a85b4adbb73b8a7c9a
+  BDBPopupViewController: b56882dae372c7879d42135aead5db93bef5f437
+
+COCOAPODS: 0.33.1
