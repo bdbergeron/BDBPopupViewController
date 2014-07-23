@@ -29,16 +29,55 @@
 
 
 #pragma mark -
+@interface BDBPopupViewControllerAnimationDelegate : NSObject
+
+typedef void (^BDBPopupViewControllerAnimationCompletionBlock)(void);
+
+@property (nonatomic, readonly, copy) BDBPopupViewControllerAnimationCompletionBlock completionBlock;
+
+- (id)initWithAnimationDidFinishBlock:(BDBPopupViewControllerAnimationCompletionBlock)block;
+
+@end
+
+
+#pragma mark -´
+@implementation BDBPopupViewControllerAnimationDelegate
+
+- (id)initWithAnimationDidFinishBlock:(BDBPopupViewControllerAnimationCompletionBlock)block
+{
+    self = [super init];
+
+    if (self) {
+        _completionBlock = block;
+    }
+
+    return self;
+}
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+    if (flag && self.completionBlock) {
+        self.completionBlock();
+    }
+}
+
+@end
+
+
+#pragma mark -
 @interface UIViewController (BDBPopupViewControllerPrivate)
 
-@property (nonatomic, readwrite) UIViewController   *popupViewController;
+@property (nonatomic, readwrite) UIViewController *bdb_popupViewController;
 
-@property (nonatomic) UIView            *bdbPopoverDimmingView;
-@property (nonatomic) UIView            *bdbPopoverContainerView;
-@property (nonatomic) UIView            *bdbPopoverContentView;
+@property (nonatomic) UIView *bdb_popupDimmingView;
+@property (nonatomic) UIView *bdb_popupContainerView;
+@property (nonatomic) UIView *bdb_popupContentView;
 
-- (void)showPopupWithAnimation:(BDBPopupViewShowAnimationStyle)animation completion:(void (^)(void))completion;
-- (void)dismissPopupWithAnimation:(BDBPopupViewHideAnimationStyle)animation completion:(void (^)(void))completion;
+- (void)bdb_showPopupWithAnimation:(BDBPopupViewShowAnimationStyle)animation
+                        completion:(void (^)(void))completion;
+
+- (void)bdb_dismissPopupWithAnimation:(BDBPopupViewHideAnimationStyle)animation
+                           completion:(void (^)(void))completion;
 
 @end
 
@@ -47,64 +86,54 @@
 @implementation UIViewController (BDBPopupViewController)
 
 #pragma mark Fake Accessors
-// http://oleb.net/blog/2011/05/faking-ivars-in-objc-categories-with-associative-references/
-// http://www.tuaw.com/2013/04/10/devjuice-better-objective-c-associated-objects/
-- (UIViewController *)popupViewController
+- (UIViewController *)bdb_popupViewController
 {
-    return objc_getAssociatedObject(self, @selector(popupViewController));
+    return objc_getAssociatedObject(self, @selector(bdb_popupViewController));
 }
 
-- (void)setPopupViewController:(UIViewController *)viewController
+- (void)setBdb_popupViewController:(UIViewController *)viewController
 {
-    objc_setAssociatedObject(self, @selector(popupViewController), viewController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(bdb_popupViewController), viewController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (UIViewController *)bdbPresentingViewController
+- (UIView *)bdb_popupDimmingView
 {
-    return objc_getAssociatedObject(self, @selector(bdbPresentingViewController));
+    return objc_getAssociatedObject(self, @selector(bdb_popupDimmingView));
 }
 
-- (void)setBdbPresentingViewController:(UIViewController *)presentingViewController
+- (void)setBdb_popupDimmingView:(UIView *)dimmingView
 {
-    objc_setAssociatedObject(self, @selector(bdbPresentingViewController), presentingViewController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(bdb_popupDimmingView), dimmingView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (UIView *)bdbPopoverDimmingView
+- (UIView *)bdb_popupContainerView
 {
-    return objc_getAssociatedObject(self, @selector(bdbPopoverDimmingView));
+    return objc_getAssociatedObject(self, @selector(bdb_popupContainerView));
 }
 
-- (void)setBdbPopoverDimmingView:(UIView *)dimmingView
+- (void)setBdb_popupContainerView:(UIView *)containerView
 {
-    objc_setAssociatedObject(self, @selector(bdbPopoverDimmingView), dimmingView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(bdb_popupContainerView), containerView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (UIView *)bdbPopoverContainerView
+- (UIView *)bdb_popupContentView
 {
-    return objc_getAssociatedObject(self, @selector(bdbPopoverContainerView));
+    return objc_getAssociatedObject(self, @selector(bdb_popupContentView));
 }
 
-- (void)setBdbPopoverContainerView:(UIView *)containerView
+- (void)setBdb_popupContentView:(UIView *)contentView
 {
-    objc_setAssociatedObject(self, @selector(bdbPopoverContainerView), containerView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (UIView *)bdbPopoverContentView
-{
-    return objc_getAssociatedObject(self, @selector(bdbPopoverContentView));
-}
-
-- (void)setBdbPopoverContentView:(UIView *)contentView
-{
-    objc_setAssociatedObject(self, @selector(bdbPopoverContentView), contentView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(bdb_popupContentView), contentView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 #pragma mark Present / Dismiss
-- (void)presentPopupViewController:(UIViewController *)viewController withAnimation:(BDBPopupViewShowAnimationStyle)animation completion:(void (^)(void))completion
+- (void)bdb_presentPopupViewController:(UIViewController *)viewController
+                         withAnimation:(BDBPopupViewShowAnimationStyle)animation
+                            completion:(void (^)(void))completion
 {
-    if (self.popupViewController)
-    {
-        NSLog(@"Cannot present popup view controller %@: popup view controller %@ is currently visible on %@.", viewController, self.popupViewController, self);
+    if (self.bdb_popupViewController) {
+        NSLog(@"Cannot present popup view controller %@: popup view controller %@ is currently visible on %@.", viewController, self.bdb_popupViewController, self);
+
         return;
     }
 
@@ -114,8 +143,8 @@
     dimmingView.autoresizingMask =
         UIViewAutoresizingFlexibleWidth |
         UIViewAutoresizingFlexibleHeight;
-    dimmingView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
-    dimmingView.alpha = 0.0;
+    dimmingView.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.5f];
+    dimmingView.alpha = 0.f;
 
     UIView *containerView = [[UIView alloc] initWithFrame:viewController.view.bounds];
     containerView.autoresizingMask =
@@ -123,17 +152,16 @@
         UIViewAutoresizingFlexibleBottomMargin |
         UIViewAutoresizingFlexibleLeftMargin |
         UIViewAutoresizingFlexibleRightMargin;
-    containerView.layer.shadowOffset = CGSizeMake(0, 3);
-    containerView.layer.shadowRadius = 12;
-    containerView.layer.shadowOpacity = 0.5;
+    containerView.layer.shadowOffset = CGSizeMake(0.f, 3.f);
+    containerView.layer.shadowRadius = 12.f;
+    containerView.layer.shadowOpacity = 0.5f;
     containerView.layer.shadowColor = [[UIColor blackColor] CGColor];
     containerView.layer.shouldRasterize = YES;
     containerView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
 
     [containerView addSubview:viewController.view];
 
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-    {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         containerView.frame = rootViewController.view.bounds;
         containerView.autoresizingMask =
             UIViewAutoresizingFlexibleWidth |
@@ -141,10 +169,10 @@
         viewController.view.frame = rootViewController.view.bounds;
     }
 
-    self.popupViewController = viewController;
-    viewController.bdbPopoverDimmingView       = dimmingView;
-    viewController.bdbPopoverContainerView     = containerView;
-    viewController.bdbPopoverContentView       = viewController.view;
+    self.bdb_popupViewController = viewController;
+    viewController.bdb_popupDimmingView = dimmingView;
+    viewController.bdb_popupContainerView = containerView;
+    viewController.bdb_popupContentView = viewController.view;
 
     [rootViewController addChildViewController:viewController];
     [rootViewController.view addSubview:dimmingView];
@@ -154,204 +182,200 @@
     [self addChildViewController:viewController];
     [viewController didMoveToParentViewController:self];
 
-    [viewController showPopupWithAnimation:animation completion:completion];
+    [viewController bdb_showPopupWithAnimation:animation completion:completion];
 }
 
-- (void)dismissPopupViewControllerWithAnimation:(BDBPopupViewHideAnimationStyle)animation completion:(void (^)(void))completion
+- (void)bdb_dismissPopupViewControllerWithAnimation:(BDBPopupViewHideAnimationStyle)animation
+                                     completion:(void (^)(void))completion
 {
-    [self dismissPopupWithAnimation:animation completion:completion];
+    [self bdb_dismissPopupWithAnimation:animation completion:completion];
 }
 
 #pragma mark Animations
-- (void)showPopupWithAnimation:(BDBPopupViewShowAnimationStyle)animation completion:(void (^)(void))completion
+- (void)bdb_showPopupWithAnimation:(BDBPopupViewShowAnimationStyle)animation
+                        completion:(void (^)(void))completion
 {
     UIViewController *rootViewController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
 
-    switch (animation)
-    {
-        case BDBPopupViewShowAnimationZoomIn:
-        {
-            CGPoint center = CGPointMake((rootViewController.view.bounds.size.width - self.bdbPopoverContainerView.frame.size.width) / 2.0,
-                                         (rootViewController.view.bounds.size.height - self.bdbPopoverContainerView.frame.size.height) / 2.0);
-            self.bdbPopoverContainerView.frame = (CGRect){center, self.bdbPopoverContainerView.frame.size};
-            self.bdbPopoverContainerView.transform = CGAffineTransformMakeScale(0.1, 0.1);
-            self.bdbPopoverContainerView.alpha = 0.0;
+    switch (animation) {
+        case BDBPopupViewShowAnimationZoomIn: {
+            CGPoint center = CGPointMake((rootViewController.view.bounds.size.width - self.bdb_popupContainerView.frame.size.width) / 2.f,
+                                         (rootViewController.view.bounds.size.height - self.bdb_popupContainerView.frame.size.height) / 2.f);
 
-            [UIView animateWithDuration:0.3
-                             animations:^{
-                                 self.bdbPopoverContainerView.transform = CGAffineTransformMakeScale(1.1, 1.1);
-                                 self.bdbPopoverContainerView.alpha = 1.0;
-                                 self.bdbPopoverDimmingView.alpha = 1.0;
-                             }
-                             completion:^(BOOL finished) {
-                                 [UIView animateWithDuration:0.2
-                                                  animations:^{
-                                                      self.bdbPopoverContainerView.transform = CGAffineTransformMakeScale(0.95, 0.95);
-                                                  }
-                                                  completion:^(BOOL finished) {
-                                                      [UIView animateWithDuration:0.2
-                                                                       animations:^{
-                                                                           self.bdbPopoverContainerView.transform = CGAffineTransformMakeScale(1.0, 1.0);
-                                                                       }
-                                                                       completion:^(BOOL finished) {
-                                                                           if (completion)
-                                                                               completion();
-                                                                       }];
-                                                  }];
-                             }];
-            break;
-        }
+            self.bdb_popupContainerView.frame = (CGRect){center, self.bdb_popupContainerView.frame.size};
+            self.bdb_popupContainerView.alpha = 0.f;
 
-        case BDBPopupViewShowAnimationDropDown:
-        {
-            CGSize windowSize = rootViewController.view.bounds.size;
-            CGSize containerSize = self.bdbPopoverContainerView.bounds.size;
-
-            CGPoint center = (CGPoint){(windowSize.width - containerSize.width) / 2.0, (windowSize.height - containerSize.height) / 2.0};
-
-            CGRect containerStartRect = (CGRect){{(windowSize.width - containerSize.width) / 2.0, -windowSize.height}, containerSize};
-            CGRect containerEndRect   = (CGRect){center, containerSize};
-
-            self.bdbPopoverContainerView.frame = containerEndRect;
-
-            [UIView animateWithDuration:0.3 animations:^{
-                self.bdbPopoverDimmingView.alpha = 1.0;
+            [UIView animateWithDuration:0.3f animations:^{
+                self.bdb_popupContainerView.alpha = 1.f;
+                self.bdb_popupDimmingView.alpha = 1.f;
             }];
 
-            CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"position.y"
-                                                                              function:BounceEaseOut
-                                                                             fromValue:containerStartRect.origin.y + containerStartRect.size.height / 2.0
-                                                                               toValue:containerEndRect.origin.y + containerEndRect.size.height / 2.0
-                                                                         keyframeCount:90];
-            animation.duration = 1.0;
-            [self.bdbPopoverContainerView.layer addAnimation:animation forKey:nil];
+            CAKeyframeAnimation *animation =
+                [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"
+                                                 function:BounceEaseOut
+                                                fromValue:0.1f
+                                                  toValue:1.f];
+            animation.duration = 1.f;
+            animation.delegate = [[BDBPopupViewControllerAnimationDelegate alloc] initWithAnimationDidFinishBlock:completion];
+
+            [self.bdb_popupContainerView.layer addAnimation:animation forKey:nil];
 
             break;
         }
+        case BDBPopupViewShowAnimationDropDown: {
+            CGSize windowSize = rootViewController.view.bounds.size;
+            CGSize containerSize = self.bdb_popupContainerView.bounds.size;
 
-        case BDBPopupViewShowAnimationDefault:
-        default:
-        {
-            CGSize windowSize  = rootViewController.view.bounds.size;
-            CGSize containerSize = self.bdbPopoverContainerView.bounds.size;
+            CGPoint center = CGPointMake((windowSize.width - containerSize.width) / 2.f,
+                                         (windowSize.height - containerSize.height) / 2.f);
 
-            CGPoint center = (CGPoint){(windowSize.width - containerSize.width) / 2.0, (windowSize.height - containerSize.height) / 2.0};
-
-            CGRect containerStartRect = (CGRect){(CGPoint){(windowSize.width - containerSize.width) / 2.0, windowSize.height}, containerSize};
+            CGRect containerStartRect = (CGRect){{(windowSize.width - containerSize.width) / 2.f, -windowSize.height}, containerSize};
             CGRect containerEndRect   = (CGRect){center, containerSize};
 
-            self.bdbPopoverContainerView.frame = containerStartRect;
+            self.bdb_popupContainerView.frame = containerEndRect;
 
-            [UIView animateWithDuration:0.3
-                                  delay:0.0
+            [UIView animateWithDuration:0.3f animations:^{
+                self.bdb_popupDimmingView.alpha = 1.f;
+            }];
+
+            CAKeyframeAnimation *animation =
+                [CAKeyframeAnimation animationWithKeyPath:@"position.y"
+                                                 function:BounceEaseOut
+                                                fromValue:containerStartRect.origin.y + containerStartRect.size.height / 2.f
+                                                  toValue:containerEndRect.origin.y + containerEndRect.size.height / 2.f];
+            animation.duration = 1.f;
+            animation.delegate = [[BDBPopupViewControllerAnimationDelegate alloc] initWithAnimationDidFinishBlock:completion];
+
+            [self.bdb_popupContainerView.layer addAnimation:animation forKey:nil];
+
+            break;
+        }
+        case BDBPopupViewShowAnimationDefault:
+        default: {
+            CGSize windowSize  = rootViewController.view.bounds.size;
+            CGSize containerSize = self.bdb_popupContainerView.bounds.size;
+
+            CGPoint center = CGPointMake((windowSize.width - containerSize.width) / 2.f,
+                                         (windowSize.height - containerSize.height) / 2.f);
+
+            CGRect containerStartRect = (CGRect){CGPointMake((windowSize.width - containerSize.width) / 2.f, windowSize.height), containerSize};
+            CGRect containerEndRect   = (CGRect){center, containerSize};
+
+            self.bdb_popupContainerView.frame = containerStartRect;
+
+            [UIView animateWithDuration:0.3f
+                                  delay:0.f
                                 options:UIViewAnimationOptionCurveEaseOut
                              animations:^{
-                                 self.bdbPopoverContainerView.frame = containerEndRect;
-                                 self.bdbPopoverDimmingView.alpha = 1.0;
+                                 self.bdb_popupContainerView.frame = containerEndRect;
+                                 self.bdb_popupDimmingView.alpha = 1.f;
                              }
                              completion:^(BOOL finished) {
-                                 if (completion)
+                                 if (completion) {
                                      completion();
+                                 }
                              }];
+
             break;
         }
     }
 }
 
-- (void)dismissPopupWithAnimation:(BDBPopupViewHideAnimationStyle)animation completion:(void (^)(void))completion
+- (void)bdb_dismissPopupWithAnimation:(BDBPopupViewHideAnimationStyle)animation
+                           completion:(void (^)(void))completion
 {
     UIViewController *rootViewController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
 
-    switch (animation)
-    {
-        case BDBPopupViewHideAnimationZoomOut:
-        {
-            [UIView animateWithDuration:0.3
+    switch (animation) {
+        case BDBPopupViewHideAnimationZoomOut: {
+            [UIView animateWithDuration:0.3f
                              animations:^{
-                                 self.popupViewController.bdbPopoverContainerView.transform = CGAffineTransformMakeScale(0.1, 0.1);
-                                 self.popupViewController.bdbPopoverContainerView.alpha = 0.0;
-                                 self.popupViewController.bdbPopoverDimmingView.alpha = 0.0;
+                                 self.bdb_popupViewController.bdb_popupContainerView.transform = CGAffineTransformMakeScale(0.1f, 0.1f);
+                                 self.bdb_popupViewController.bdb_popupContainerView.alpha = 0.f;
+                                 self.bdb_popupViewController.bdb_popupDimmingView.alpha = 0.f;
                              }
                              completion:^(BOOL finished) {
-                                 [self.popupViewController willMoveToParentViewController:nil];
-                                 [self.popupViewController.bdbPopoverContainerView removeFromSuperview];
-                                 [self.popupViewController.bdbPopoverDimmingView removeFromSuperview];
-                                 [self.popupViewController removeFromParentViewController];
-                                 [self.popupViewController didMoveToParentViewController:nil];
+                                 [self.bdb_popupViewController willMoveToParentViewController:nil];
+                                 [self.bdb_popupViewController.bdb_popupContainerView removeFromSuperview];
+                                 [self.bdb_popupViewController.bdb_popupDimmingView removeFromSuperview];
+                                 [self.bdb_popupViewController removeFromParentViewController];
+                                 [self.bdb_popupViewController didMoveToParentViewController:nil];
 
-                                 self.popupViewController.bdbPopoverContainerView = nil;
-                                 self.popupViewController.bdbPopoverContentView   = nil;
-                                 self.popupViewController.bdbPopoverDimmingView   = nil;
-                                 self.popupViewController = nil;
+                                 self.bdb_popupViewController.bdb_popupContainerView = nil;
+                                 self.bdb_popupViewController.bdb_popupContentView   = nil;
+                                 self.bdb_popupViewController.bdb_popupDimmingView   = nil;
+                                 self.bdb_popupViewController = nil;
 
-                                 if (completion)
+                                 if (completion) {
                                      completion();
+                                 }
                              }];
+
             break;
         }
-
-        case BDBPopupViewHideAnimationTakeoff:
-        {
+        case BDBPopupViewHideAnimationTakeoff: {
             CGSize windowSize    = rootViewController.view.bounds.size;
-            CGSize containerSize = self.popupViewController.bdbPopoverContainerView.bounds.size;
+            CGSize containerSize = self.bdb_popupViewController.bdb_popupContainerView.bounds.size;
 
-            CGRect containerEndRect = (CGRect){(CGPoint){(windowSize.width - containerSize.width) / 2.0, -windowSize.height}, containerSize};
+            CGRect containerEndRect = (CGRect){CGPointMake((windowSize.width - containerSize.width) / 2.f, -windowSize.height), containerSize};
 
-            [UIView animateWithDuration:0.3
-                                  delay:0.0
+            [UIView animateWithDuration:0.3f
+                                  delay:0.f
                                 options:UIViewAnimationOptionCurveEaseIn
                              animations:^{
-                                 self.popupViewController.bdbPopoverContainerView.frame = containerEndRect;
-                                 self.popupViewController.bdbPopoverDimmingView.alpha = 0.0;
+                                 self.bdb_popupViewController.bdb_popupContainerView.frame = containerEndRect;
+                                 self.bdb_popupViewController.bdb_popupDimmingView.alpha = 0.f;
                              }
                              completion:^(BOOL finished) {
-                                 [self.popupViewController willMoveToParentViewController:nil];
-                                 [self.popupViewController.bdbPopoverContainerView removeFromSuperview];
-                                 [self.popupViewController.bdbPopoverDimmingView removeFromSuperview];
-                                 [self.popupViewController removeFromParentViewController];
-                                 [self.popupViewController didMoveToParentViewController:nil];
+                                 [self.bdb_popupViewController willMoveToParentViewController:nil];
+                                 [self.bdb_popupViewController.bdb_popupContainerView removeFromSuperview];
+                                 [self.bdb_popupViewController.bdb_popupDimmingView removeFromSuperview];
+                                 [self.bdb_popupViewController removeFromParentViewController];
+                                 [self.bdb_popupViewController didMoveToParentViewController:nil];
 
-                                 self.popupViewController.bdbPopoverContainerView = nil;
-                                 self.popupViewController.bdbPopoverContentView   = nil;
-                                 self.popupViewController.bdbPopoverDimmingView   = nil;
-                                 self.popupViewController = nil;
+                                 self.bdb_popupViewController.bdb_popupContainerView = nil;
+                                 self.bdb_popupViewController.bdb_popupContentView   = nil;
+                                 self.bdb_popupViewController.bdb_popupDimmingView   = nil;
+                                 self.bdb_popupViewController = nil;
 
-                                 if (completion)
+                                 if (completion) {
                                      completion();
+                                 }
                              }];
+
             break;
         }
-
         case BDBPopupViewHideAnimationDefault:
-        default:
-        {
+        default: {
             CGSize windowSize    = rootViewController.view.bounds.size;
-            CGSize containerSize = self.popupViewController.bdbPopoverContainerView.bounds.size;
+            CGSize containerSize = self.bdb_popupViewController.bdb_popupContainerView.bounds.size;
 
-            CGRect containerEndRect = (CGRect){(CGPoint){(windowSize.width - containerSize.width) / 2.0, windowSize.height}, containerSize};
+            CGRect containerEndRect = (CGRect){CGPointMake((windowSize.width - containerSize.width) / 2.f, windowSize.height), containerSize};
 
-            [UIView animateWithDuration:0.3
-                                  delay:0.0
+            [UIView animateWithDuration:0.3f
+                                  delay:0.f
                                 options:UIViewAnimationOptionCurveEaseIn
                              animations:^{
-                                 self.popupViewController.bdbPopoverContainerView.frame = containerEndRect;
-                                 self.popupViewController.bdbPopoverDimmingView.alpha = 0.0;
+                                 self.bdb_popupViewController.bdb_popupContainerView.frame = containerEndRect;
+                                 self.bdb_popupViewController.bdb_popupDimmingView.alpha = 0.f;
                              }
                              completion:^(BOOL finished) {
-                                 [self.popupViewController willMoveToParentViewController:nil];
-                                 [self.popupViewController.bdbPopoverContainerView removeFromSuperview];
-                                 [self.popupViewController.bdbPopoverDimmingView removeFromSuperview];
-                                 [self.popupViewController removeFromParentViewController];
-                                 [self.popupViewController didMoveToParentViewController:nil];
+                                 [self.bdb_popupViewController willMoveToParentViewController:nil];
+                                 [self.bdb_popupViewController.bdb_popupContainerView removeFromSuperview];
+                                 [self.bdb_popupViewController.bdb_popupDimmingView removeFromSuperview];
+                                 [self.bdb_popupViewController removeFromParentViewController];
+                                 [self.bdb_popupViewController didMoveToParentViewController:nil];
 
-                                 self.popupViewController.bdbPopoverContainerView = nil;
-                                 self.popupViewController.bdbPopoverContentView   = nil;
-                                 self.popupViewController.bdbPopoverDimmingView   = nil;
-                                 self.popupViewController = nil;
+                                 self.bdb_popupViewController.bdb_popupContainerView = nil;
+                                 self.bdb_popupViewController.bdb_popupContentView   = nil;
+                                 self.bdb_popupViewController.bdb_popupDimmingView   = nil;
+                                 self.bdb_popupViewController = nil;
 
-                                 if (completion)
+                                 if (completion) {
                                      completion();
+                                 }
                              }];
+
             break;
         }
     }

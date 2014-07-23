@@ -44,9 +44,13 @@ typedef NS_ENUM(NSUInteger, BDBPopupViewHideAnimationStyle) {
 #pragma mark -
 @interface UIViewController (BDBPopupViewController)
 
-@property (nonatomic, readonly) UIViewController    *popupViewController;
+@property (nonatomic, readonly) UIViewController *bdb_popupViewController;
 
-- (void)presentPopupViewController:(UIViewController *)viewController withAnimation:(BDBPopupViewShowAnimationStyle)animation completion:(void (^)(void))completion;
-- (void)dismissPopupViewControllerWithAnimation:(BDBPopupViewHideAnimationStyle)animation completion:(void (^)(void))completion;
+- (void)bdb_presentPopupViewController:(UIViewController *)viewController
+                         withAnimation:(BDBPopupViewShowAnimationStyle)animation
+                            completion:(void (^)(void))completion;
+
+- (void)bdb_dismissPopupViewControllerWithAnimation:(BDBPopupViewHideAnimationStyle)animation
+                                         completion:(void (^)(void))completion;
 
 @end
