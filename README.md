@@ -2,15 +2,19 @@
 
 BDBPopupViewController is a UIViewController category for presenting custom view controllers modally. Using this category makes it trivial to present a modal view controller that defines its own size and allows for a much more customized look and feel than is possible using UIKit's default view controller presentation methods.
 
-Take a look at the PopoverViewDemo Xcode project to get started quickly.
+Take a look at the included demo project to get started quickly.
 
 ## Usage
 
 BDBPopupViewController is simple to use because there are only two methods: one for presenting a popup view controller, and one for dismissing it.
 
-```objective-c
-- (void)presentPopupViewController:(UIViewController *)viewController withAnimation:(BDBPopupViewShowAnimationStyle)animation completion:(void (^)(void))completion;
-- (void)dismissPopupViewControllerWithAnimation:(BDBPopupViewHideAnimationStyle)animation completion:(void (^)(void))completion;
+```objc
+- (void)bdb_presentPopupViewController:(UIViewController *)viewController
+                         withAnimation:(BDBPopupViewShowAnimationStyle)animation
+                            completion:(void (^)(void))completion;
+
+- (void)bdb_dismissPopupViewControllerWithAnimation:(BDBPopupViewHideAnimationStyle)animation
+                                         completion:(void (^)(void))completion;
 ```
 
 There is also a `popupViewController` property that allows you to quickly and easily access the currently displayed popup view controller from its parent view controller.
