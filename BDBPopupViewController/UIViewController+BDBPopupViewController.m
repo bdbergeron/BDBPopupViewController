@@ -22,8 +22,8 @@
 //  CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <objc/runtime.h>
-#import <QuartzCore/QuartzCore.h>
+@import ObjectiveC.runtime;
+@import QuartzCore;
 
 #import "UIViewController+BDBPopupViewController.h"
 
