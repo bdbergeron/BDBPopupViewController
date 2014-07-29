@@ -25,6 +25,11 @@
 #import "UIViewController+BDBPopupViewController.h"
 
 
+static NSString * const kWebsiteURL = @"http://bradbergeron.com";
+static NSString * const kTwitterURL = @"http://twitter.com/bradbergeron";
+static NSString * const kGithubURL  = @"http://github.com/bdbergeron";
+
+
 #pragma mark -
 @interface AboutViewController ()
 
@@ -53,11 +58,11 @@
 {
     if (recognizer.state == UIGestureRecognizerStateEnded) {
         if ([recognizer.view isEqual:self.website]) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://bradbergeron.com"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kWebsiteURL]];
         } else if ([recognizer.view isEqual:self.twitter]) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://twitter.com/bradbergeron"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kTwitterURL]];
         } else if ([recognizer.view isEqual:self.github]) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://github.com/bdbergeron"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kGithubURL]];
         }
     }
 }

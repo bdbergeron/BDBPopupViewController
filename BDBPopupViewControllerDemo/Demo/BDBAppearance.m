@@ -31,7 +31,7 @@
 #pragma mark Colors
 + (UIColor *)blueColor
 {
-    return [UIColor colorWithRed:0.f green:0.694f blue:1.000f alpha:1.f];
+    return [UIColor colorWithRed:0.f green:0.694f blue:1.f alpha:1.f];
 }
 
 + (UIColor *)pinkColor
@@ -53,16 +53,16 @@
         UIColor *lineColor   = [UIColor colorWithWhite:0.f alpha:0.3f];
 
         NSArray *gradientColors = @[(id)topColor.CGColor, (id)bottomColor.CGColor];
-        CGFloat gradientLocations[] = {0, 1};
+        CGFloat gradientLocations[] = {0.f, 1.f};
         CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)gradientColors, gradientLocations);
 
-        UIBezierPath *gradientPath = [UIBezierPath bezierPathWithRect:CGRectMake(0, 0, 1, height)];
+        UIBezierPath *gradientPath = [UIBezierPath bezierPathWithRect:CGRectMake(0.f, 0.f, 1.f, height)];
         CGContextSaveGState(context);
         [gradientPath addClip];
-        CGContextDrawLinearGradient(context, gradient, CGPointZero, CGPointMake(0, height), 0);
+        CGContextDrawLinearGradient(context, gradient, CGPointZero, CGPointMake(0.f, height), 0.f);
         CGContextRestoreGState(context);
 
-        UIBezierPath *linePath = [UIBezierPath bezierPathWithRect:CGRectMake(0, height - 1, 1, 1)];
+        UIBezierPath *linePath = [UIBezierPath bezierPathWithRect:CGRectMake(0.f, height - 1.f, 1.f, 1.f)];
         [lineColor setFill];
         [linePath fill];
 
@@ -93,7 +93,7 @@
                                                           UITextAttributeTextColor:[UIColor whiteColor],
                                                           UITextAttributeTextShadowColor:[UIColor clearColor]}];
         [navigationBarAppearance setShadowImage:[UIImage new]];
-        [navigationBarAppearance setTitleVerticalPositionAdjustment:1.0 forBarMetrics:UIBarMetricsDefault];
+        [navigationBarAppearance setTitleVerticalPositionAdjustment:1.f forBarMetrics:UIBarMetricsDefault];
     }
 }
 

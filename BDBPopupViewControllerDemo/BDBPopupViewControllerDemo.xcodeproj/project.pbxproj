@@ -21,11 +21,11 @@
 
 /* Begin PBXFileReference section */
 		73F8FBB6479B481B9783D8BC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		E82938A517EA804F003902B9 /* PopupDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopupDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E82938B017EA804F003902B9 /* BDBPopoverViewDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BDBPopoverViewDemo-Info.plist"; sourceTree = "<group>"; };
+		E82938A517EA804F003902B9 /* BDBPopupViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BDBPopupViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E82938B017EA804F003902B9 /* BDBPopupViewControllerDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BDBPopupViewControllerDemo-Info.plist"; sourceTree = "<group>"; };
 		E82938B217EA804F003902B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E82938B417EA804F003902B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E82938B617EA804F003902B9 /* BDBPopoverViewDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BDBPopoverViewDemo-Prefix.pch"; sourceTree = "<group>"; };
+		E82938B617EA804F003902B9 /* BDBPopupViewControllerDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BDBPopupViewControllerDemo-Prefix.pch"; sourceTree = "<group>"; };
 		E82938B717EA804F003902B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E82938B817EA804F003902B9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E82938DD17EA813E003902B9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		E82938A617EA804F003902B9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E82938A517EA804F003902B9 /* PopupDemo.app */,
+				E82938A517EA804F003902B9 /* BDBPopupViewControllerDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,10 +87,10 @@
 		E82938AF17EA804F003902B9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E82938B017EA804F003902B9 /* BDBPopoverViewDemo-Info.plist */,
+				E82938B017EA804F003902B9 /* BDBPopupViewControllerDemo-Info.plist */,
+				E82938B617EA804F003902B9 /* BDBPopupViewControllerDemo-Prefix.pch */,
 				E82938B117EA804F003902B9 /* InfoPlist.strings */,
 				E82938B417EA804F003902B9 /* main.m */,
-				E82938B617EA804F003902B9 /* BDBPopoverViewDemo-Prefix.pch */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -135,7 +135,7 @@
 			);
 			name = PopupDemo;
 			productName = PopoverViewDemo;
-			productReference = E82938A517EA804F003902B9 /* PopupDemo.app */;
+			productReference = E82938A517EA804F003902B9 /* BDBPopupViewControllerDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -320,7 +320,7 @@
 				GCC_PREFIX_HEADER = "Demo/Supporting Files/BDBPopupViewControllerDemo-Prefix.pch";
 				INFOPLIST_FILE = "Demo/Supporting Files/BDBPopupViewControllerDemo-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_NAME = PopupDemo;
+				PRODUCT_NAME = BDBPopupViewControllerDemo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -335,7 +335,7 @@
 				GCC_PREFIX_HEADER = "Demo/Supporting Files/BDBPopupViewControllerDemo-Prefix.pch";
 				INFOPLIST_FILE = "Demo/Supporting Files/BDBPopupViewControllerDemo-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_NAME = PopupDemo;
+				PRODUCT_NAME = BDBPopupViewControllerDemo;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
