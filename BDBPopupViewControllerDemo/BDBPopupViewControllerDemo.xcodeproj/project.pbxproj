@@ -318,9 +318,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Supporting Files/BDBPopupViewControllerDemo-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "Demo/Supporting Files/BDBPopupViewControllerDemo-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = BDBPopupViewControllerDemo;
+				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -333,9 +334,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Demo/Supporting Files/BDBPopupViewControllerDemo-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "Demo/Supporting Files/BDBPopupViewControllerDemo-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = BDBPopupViewControllerDemo;
+				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
