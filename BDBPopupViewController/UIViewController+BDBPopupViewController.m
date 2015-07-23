@@ -167,6 +167,9 @@ typedef void (^BDBPopupViewControllerAnimationCompletionBlock)(void);
             UIViewAutoresizingFlexibleWidth |
             UIViewAutoresizingFlexibleHeight;
         viewController.view.frame = rootViewController.view.bounds;
+        viewController.view.autoresizingMask = 
+            UIViewAutoresizingFlexibleWidth | 
+            UIViewAutoresizingFlexibleHeight;
     }
 
     self.bdb_popupViewController = viewController;
